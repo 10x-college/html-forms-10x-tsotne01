@@ -5,23 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jovian Drift SOS</title>
     <link rel="stylesheet" href="./styles/styles.css">
+    <!-- broken link below -->
+    <link rel="stylesheet" href="./broken/path.css">
 </head>
 <body>
-    <iframe id="bg-frame" src="./styles/effect.html"></iframe>
+    <iframe id="bg-frame" src="./styles/effect.html" width="100%" height="100%">
+    <!-- missing closing tag -->
     
-    <form method="post" action="#">
+    <form method="post" action="#" id="broken-form">
         <!-- Phase 2: Pilot Credentials -->
         <fieldset>
             <legend>Pilot Credentials</legend>
             
-            <label for="pilot-name">Pilot Name:</label>
-            <input type="text" id="pilot-name" name="pilot_name" required placeholder="Enter name">
+            <!-- broken label - wrong for attribute -->
+            <label for="wrong-id">Pilot Name:</label>
+            <input type="text" id="pilot-name" name="pilot_name" required placeholder="Enter name" class="broken-class">
+            <!-- duplicate ID -->
+            <input type="text" id="pilot-name" name="duplicate_name" placeholder="duplicate">
             
             <label for="access-code">Access Code:</label>
-            <input type="password" id="access-code" name="access_code" required>
+            <!-- missing type attribute -->
+            <input id="access-code" name="access_code" required>
+            <!-- broken - password input with text type -->
+            <input type="text" id="access-code-duplicate" name="access_code" value="visible-password">
             
             <label for="command-email">Command Email:</label>
-            <input type="email" id="command-email" name="email" required>
+            <!-- wrong input type for email -->
+            <input type="number" id="command-email" name="email" required>
+            <!-- missing closing tag for input above -->
         </fieldset>
         
         <!-- Phase 3: Vessel Diagnostics -->
@@ -29,13 +40,22 @@
             <legend>Vessel Diagnostics</legend>
             
             <label for="hull-damage">Hull Damage (%):</label>
-            <input type="number" id="hull-damage" name="hull_damage" required>
+            <!-- number input with text type -->
+            <input type="text" id="hull-damage" name="hull_damage" required>
+            <!-- broken - number with invalid attributes -->
+            <input type="number" id="hull-damage" name="hull_damage_2" min="abc" max="xyz">
             
             <label for="emergency-level">Emergency Level:</label>
             <select id="emergency-level" name="emergency_level" required>
-                <option value="low">Low</option>
+                <!-- missing value attribute -->
+                <option>Low</option>
                 <option value="medium">Medium</option>
-                <option value="high">High</option>
+                <!-- duplicate value -->
+                <option value="medium">High</option>
+                <!-- unclosed option tag -->
+                <option value="critical"
+            </select>
+            <!-- extra closing tag -->
             </select>
         </fieldset>
         
@@ -43,21 +63,38 @@
         <fieldset>
             <legend>Mission Log & Evidence</legend>
             
-            <label for="sos-message">SOS Message:</label>
-            <textarea id="sos-message" name="sos_message" required rows="3"></textarea>
+            <!-- label pointing to wrong element -->
+            <label for="wrong-textarea">SOS Message:</label>
+            <textarea id="sos-message" name="sos_message" required rows="3" cols="abc"></textarea>
+            <!-- duplicate textarea -->
+            <textarea id="sos-message" name="sos_message_2" rows="-5"></textarea>
             
             <div>
-                <input type="checkbox" id="quarantine" name="quarantine" required>
+                <!-- checkbox with wrong type -->
+                <input type="radio" id="quarantine" name="quarantine" required>
                 <label for="quarantine">I agree to quarantine protocols.</label>
+                <!-- duplicate checkbox with same name but different type -->
+                <input type="checkbox" id="quarantine-2" name="quarantine" checked="checked" required="false">
             </div>
+            <!-- missing closing div -->
         </fieldset>
         
         <!-- Phase 5: The Control Panel -->
-        <button type="submit">INITIATE TRANSMISSION</button>
-        <button type="reset">RESET SYSTEM</button>
+        <!-- button with broken attributes -->
+        <button type="submit" onclick="undefinedFunction()" disabled="false">INITIATE TRANSMISSION</button>
+        <button type="reset" type="button">RESET SYSTEM</button>
+        <!-- button outside form -->
+        <button type="submit">EXTRA BUTTON</button>
     </form>
+    <!-- form not closed properly -->
     
+    <!-- script with wrong path -->
     <script src="./scripts/launch.js"></script>
+    <script src="./broken/script.js"></script>
+    <!-- broken script tag -->
+    <script>
+        // missing closing script tag
+        console.log("broken");
+    <!-- script tag not closed -->
 </body>
-</html>
-
+<!-- missing closing html tag -->
