@@ -155,12 +155,12 @@ Once your form is complete and working, add these final touches:
 - In the `<head>` section, find the `<title>` element
 - Right AFTER the `</title>` closing tag, add this exact code:
   ```html
-  <link rel="stylesheet" href="./styles/styles.css">
+  <link rel="stylesheet" href="../styles/styles.css">
   ```
 - Your code should look like this:
   ```html
       <title>Jovian Drift SOS</title>
-      <link rel="stylesheet" href="./styles/styles.css">
+      <link rel="stylesheet" href="../styles/styles.css">
   </head>
   ```
 
@@ -168,12 +168,12 @@ Once your form is complete and working, add these final touches:
 - In the `<body>` section, find your opening `<form>` tag
 - Right BEFORE the `<form>` tag, add this exact code:
   ```html
-  <iframe id="bg-frame" src="./styles/effect.html"></iframe>
+  <iframe id="bg-frame" src="../styles/effect.html"></iframe>
   ```
 - Your code should look like this:
   ```html
   <body>
-      <iframe id="bg-frame" src="./styles/effect.html"></iframe>
+      <iframe id="bg-frame" src="../styles/effect.html"></iframe>
       
       <form method="post" action="#">
   ```
@@ -182,14 +182,14 @@ Once your form is complete and working, add these final touches:
 - In the `<body>` section, find the closing `</body>` tag (it should be the very last line of your HTML)
 - Right BEFORE the `</body>` tag, add this exact code:
   ```html
-  <script src="./scripts/launch.js"></script>
+  <script src="../scripts/launch.js"></script>
   ```
 - This script enables the interactive launch sequence when you submit the form
 - Your code should look like this at the end:
   ```html
       </form>
       
-      <script src="./scripts/launch.js"></script>
+      <script src="../scripts/launch.js"></script>
   </body>
   </html>
   ```
