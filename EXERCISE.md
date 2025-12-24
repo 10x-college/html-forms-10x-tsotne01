@@ -9,7 +9,7 @@ high-priority distress signal to Earth.
 
 ## 📁 Getting Started
 
-1. Create a new file called `index.html` in the root of this project ( don't nest it in folders like tsotne/index.html or khatia/index.html)
+1. Create a new folder called your name and surname, inside this folder add a new file called `index.html` in the root of this project ( don't nest it in folders like tsotne/index.html or khatia/index.html)
 2. Start with the basic HTML5 document structure including:
    - A DOCTYPE declaration at the very top
    - An `<html>` element with the `lang` attribute set to "en"
